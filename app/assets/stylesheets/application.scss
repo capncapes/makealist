@@ -1,0 +1,135 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+$orange: #f98720;
+$orange-dark: #f4730b;
+$yellow: #ffe815;
+$yellow-dark: #fad400;
+$third: #00cf90;
+$base: #0d68ce;
+
+a {
+    color: $base;
+}
+
+a:hover, a:active {
+    color: $orange;
+}
+
+body {
+    color: #333;
+}
+
+.navbar {
+    background-color: $orange;
+    border-radius: 0;
+}
+
+.container > .navbar-header {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li, .navbar-header {
+    border-top: 5px solid $orange;
+    border-bottom: 5px solid $orange;
+}
+
+.navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:active {
+    border-bottom: 5px solid $yellow;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active {
+    color: #fff;
+}
+
+.col-md-8 img {
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    border: 5px solid $yellow;
+    border-radius: 10px;
+}
+
+.field {
+    margin: 2rem 0;
+}
+
+.field input {
+    width: 100%;
+    padding: 0 1rem;
+    line-height: 3rem;
+    color: $base;
+    border: 2px solid $base;
+    border-radius: 5px;
+}
+
+.field input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+}
+
+.field input:focus {
+    color: $orange;
+    border: 2px solid $orange;
+}
+
+.actions input[type=submit] {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: $orange;
+    border: 2px solid $orange;
+    border-radius: 5px;
+}
+
+.actions input[type=submit]:hover, .actions input[type=submit]:active {
+    background-color: $orange;
+    color: #fff;
+}
+
+h1 span.badge.badge-secondary {
+    text-transform: uppercase;
+}
+
+p.description {
+    font-size: 23.4px;
+    color: #777;
+}
+
+.btn.btn-orange {
+    color: #fff;
+    background-color: $orange;
+    border-color: $orange-dark;
+    margin-top: 4px;
+}
+
+.btn.btn-orange:hover, .btn.btn-orange:active {
+    background-color: $orange-dark;
+}
+
+.btn.btn-yellow {
+    color: #333;
+    background-color: $yellow;
+    border-color: $yellow-dark;
+}
+
+.btn.btn-yellow:hover, .btn.btn-yellow:active {
+    background-color: $yellow-dark;
+}
+
+div.card {
+    margin-bottom: 2rem;
+}
+
+smaller {
+    font-size: 75%;
+    color: #777;
+}

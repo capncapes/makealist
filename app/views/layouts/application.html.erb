@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAKEALIST</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container-flex">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makealist-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars" aria-hidden="false"></i>
+          </button>
+          <%= link_to "MAKEALIST", root_path, class: 'navbar-brand' %>
+        </div>
+        <div class="collapse navbar-collapse" id="makealist-nav">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Lists", lists_path %></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <% if user_signed_in? %>
+              <%= current_user.email %>
+              <li class="nav-item"><%= link_to 'Edit profile', edit_user_registration_path%></li>
+              <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

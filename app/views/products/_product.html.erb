@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="row">
+        <div class=col-md-1>
+            <h4><%= product.order %></h4>
+        </div>
+        <div class="col-md-11">
+            <div class="card-body">
+                <h4 class="card-title"><%= product.name %><br></h4>
+                <p class="card-text"><%= product.description %></p>
+                <% if product.store1_name %>
+                    <%= content_tag :a, :href => product.store1_link, :target => '_blank', :class => 'btn btn-yellow' do %>
+                        <i class="fa fa-link fa-fw" aria-hidden="true"></i> <%= product.store1_name %>
+                        <smaller><%= number_to_currency(product.store1_price, precision: 2) %></smaller>
+                    <% end %>
+                <% end %>
+                <% if product.store2_name %>
+                    <%= content_tag :a, :href => product.store2_link, :target => '_blank', :class => 'btn btn-yellow' do %>
+                        <i class="fa fa-link fa-fw" aria-hidden="true"></i> <%= product.store2_name %>
+                        <smaller><%= number_to_currency(product.store2_price, precision: 2) %></smaller>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
