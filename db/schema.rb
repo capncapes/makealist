@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205023146) do
+ActiveRecord::Schema.define(version: 20180302200507) do
+
+  create_table "basics", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "position"
+    t.boolean "todo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "list_id"
+    t.index ["list_id"], name: "index_basics_on_list_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
@@ -18,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171205023146) do
     t.boolean "private"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "list_type"
   end
 
   create_table "products", force: :cascade do |t|

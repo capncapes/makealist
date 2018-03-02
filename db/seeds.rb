@@ -13,7 +13,8 @@ end
     List.create!(
         name: RandomData.random_name,
         description: RandomData.random_paragraph,
-        private: [true, false].sample,
+        list_type: ["basic", "product"].sample,
+        private: [true, false].sample
     )
 end
 lists = List.all
@@ -21,7 +22,7 @@ lists = List.all
 # Create Products
 100.times do
     Product.create!(
-        list: lists.sample,
+        list_id: lists.sample,
         name: RandomData.random_name,
         description: RandomData.random_paragraph,
         store1_name: RandomData.random_word.capitalize,
@@ -35,7 +36,20 @@ lists = List.all
 end
 products = Product.all
 
+# Create Basics
+100.times do
+    Basic.create!(
+        list_id: lists.sample,
+        name: RandomData.random_name,
+        description: RandomData.random_paragraph,
+        position: RandomData.random_rank,
+        todo: [true, false].sample
+    )
+end
+basics = Basic.all
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{List.count} lists created"
 puts "#{Product.count} products created"
+puts "#{Basic.count} basic list items created"
