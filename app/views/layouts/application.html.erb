@@ -7,37 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container-flex">
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makealist-nav">
-            <span class="sr-only">Toggle navigation</span>
-            <i class="fa fa-bars" aria-hidden="false"></i>
-          </button>
-          <%= link_to "MAKEALIST", root_path, class: 'navbar-brand' %>
+  <div class="window-container">
+    <div class="container-flex">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makealist-nav">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-bars" aria-hidden="false"></i>
+            </button>
+            <%= link_to "MAKEALIST", root_path, class: 'navbar-brand' %>
+          </div>
+          <div class="collapse navbar-collapse" id="makealist-nav">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Lists", lists_path %></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+              <% if user_signed_in? %>
+                <%= current_user.email %>
+                <li class="nav-item"><%= link_to 'Edit profile', edit_user_registration_path%></li>
+                <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="makealist-nav">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Lists", lists_path %></li>
-          </ul>
-          <ul class="nav navbar-nav pull-right">
-            <% if user_signed_in? %>
-              <%= current_user.email %>
-              <li class="nav-item"><%= link_to 'Edit profile', edit_user_registration_path%></li>
-              <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path %></li>
-              <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="container">
-    <%= yield %>
+      </nav>
+    </div>
+    <div class="container body">
+      <%= yield %>
+    </div>
+    <div class="container-flex footer">
+      <p>Designed and developed by <a href="http://brandoncaples.com/" target="_blank">Brandon Caples</a>. &copy; 2018</p>
+    </div>
   </div>
 </body>
 </html>

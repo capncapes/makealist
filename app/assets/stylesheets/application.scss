@@ -8,6 +8,8 @@ $yellow: #ffe815;
 $yellow-dark: #fad400;
 $third: #00cf90;
 $base: #0d68ce;
+$dark: #333;
+$gray: #777;
 
 a {
     color: $base;
@@ -17,13 +19,15 @@ a:hover, a:active {
     color: $orange;
 }
 
-body {
-    color: #333;
-}
+// NAVIGATION
 
 .navbar {
     background-color: $orange;
     border-radius: 0;
+}
+
+div.container {
+    min-height: 100%;
 }
 
 .container > .navbar-header {
@@ -45,6 +49,13 @@ body {
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active {
     color: #fff;
+}
+
+// BODY
+
+div.container.body {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
 }
 
 .col-md-8 img {
@@ -101,7 +112,7 @@ h1 span.badge.badge-secondary {
 
 p.description {
     font-size: 23.4px;
-    color: #777;
+    color: $gray;
 }
 
 .btn.btn-orange {
@@ -116,7 +127,7 @@ p.description {
 }
 
 .btn.btn-yellow {
-    color: #333;
+    color: $dark;
     background-color: $yellow;
     border-color: $yellow-dark;
 }
@@ -131,5 +142,28 @@ div.card {
 
 smaller {
     font-size: 75%;
-    color: #777;
+    color: $gray;
+}
+
+div.container-flex.footer {
+    color: #fff;
+    background-color: $dark;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+div.container-flex.footer p {
+    margin: 0;
+}
+
+div.container-flex.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+div.container-flex.footer a:hover, div.container-flex.footer a:active {
+    color: $yellow;
 }
