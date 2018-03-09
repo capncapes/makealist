@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :require_sign_in, except: :show
+  before_action :authorize_user, except: [:show, :new, :create]
+
   def index
     @products = Product.all
   end
@@ -13,11 +16,12 @@ class ProductsController < ApplicationController
   end
   
   def create
-    @product = current_user.lists.products.new(product_params)
+    @list = List.find(params[:list_id])
+    @product = @list.products.build(product_params)
     
     if @product.save
       flash[:notice] = "Product was added to the list."
-      redirect_to([@list, @product])
+      redirect_to(@list)
     else
       flash.now[:alert] = "There was an error saving the product. Please try again."
       render(:new)
@@ -56,5 +60,13 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :description, :store1_name, :store1_link, :store1_price, :store2_name, :store2_link, :store2_price)
+  end
+
+  def authorize_user
+    product = Product.find(params[:id])
+    unless current_user == product.user || current_user.admin?
+      flash[:alert] = "You're not authorized to do that."
+      redirect_to([product.list, product])
+    end
   end
 end

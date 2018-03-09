@@ -1,17 +1,11 @@
 <%= form_for @list do |f| %>
-    <div class="col-md-9">
-        <%= render partial: 'form' %>
-    </div>
-    <div class="col-md-3">
-        <p>Create your list.</p>
-    </div>
     <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control', placeholder: "List Name" %>
     </div>
     <div class="form-group">
-        <%= f.label :type %>
-        <%= f.select :type, [['Basic', 1], ['Product', 2], ['Destination', 3]], class: 'form-control', id: 'type-control-select' %>
+        <%= f.label :list_type %>
+        <%= f.select :list_type, options_for_select(List.list_types.keys), class: 'form-control', id: 'type-control-select' %>
     </div>
     <div class="form-group">
         <%= f.label :description %>

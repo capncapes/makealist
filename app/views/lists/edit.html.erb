@@ -1,0 +1,9 @@
+<h1>Edit List: <em><%= @list.name %></em></h1>
+<div class="row">
+    <div class="col-md-9">
+        <%= render partial: 'form', locals: { list: @list } %>
+    </div>
+    <div class="col-md-3">
+        <p>Edit your list.</p>
+    </div>
+</div>
