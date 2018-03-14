@@ -6,7 +6,10 @@ $orange: #f98720;
 $orange-dark: #f4730b;
 $yellow: #ffe815;
 $yellow-dark: #fad400;
-$third: #00cf90;
+$blue: #007bff;
+$blue-dark: #0076ea;
+$green: #5cb85c;
+$green-dark: #4cae4c;
 $base: #0d68ce;
 $dark: #333;
 $gray: #777;
@@ -51,6 +54,14 @@ div.container {
     color: #fff;
 }
 
+body .window-container .container-flex .navbar.navbar-default .container .navbar-header .navbar-brand {
+    color: #fff;
+}
+
+body .window-container .container-flex .navbar.navbar-default .container .navbar-header .navbar-brand:hover, body .window-container .container-flex .navbar.navbar-default .container .navbar-header .navbar-brand:active {
+    color: $yellow;
+}
+
 // BODY
 
 div.container.body {
@@ -65,6 +76,8 @@ div.container.body {
     border: 5px solid $yellow;
     border-radius: 10px;
 }
+
+// FORMS
 
 select {
     text-transform: capitalize;
@@ -149,6 +162,145 @@ smaller {
     color: $gray;
 }
 
+// HOME PAGE
+
+.jumbotron.jumbotron-fluid {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.jumbotron.jumbotron-fluid .container h1#greeting, .jumbotron.jumbotron-fluid .container p.lead {
+    -webkit-animation: fall 1.5s ease 0.5s backwards, text-fade-in 2s ease 0.5s backwards;
+    -moz-animation: fall 1.5s ease 0.5s backwards, text-fade-in 2s ease 0.5s backwards;
+    animation: fall 1.5s ease 0.5s backwards, text-fade-in 2s ease 0.5s backwards;
+}
+
+@-webkit-keyframes fall { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@-moz-keyframes fall { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@keyframes fall { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+
+@-webkit-keyframes text-fade-in { 0% { opacity: 0 } 50% { opacity: 1 } }
+@-moz-keyframes text-fade-in { 0% { opacity: 0 } 50% { opacity: 1 } }
+@keyframes text-fade-in { 0% { opacity: 0 } 50% { opacity: 1 } }
+
+.morning {
+    background: -webkit-linear-gradient(0deg, rgb(245, 246, 197), rgb(178, 229, 246));
+    background: linear-gradient(0deg, rgb(245, 246, 197), rgb(178, 229, 246));
+}
+
+.afternoon {
+    background: -webkit-linear-gradient(0deg, rgb(206, 236, 246), rgb(65, 165, 239));
+    background: linear-gradient(0deg, rgb(206, 236, 246), rgb(65, 165, 239));
+}
+
+.evening {
+    background: -webkit-linear-gradient(0deg, rgb(7, 72, 154), rgb(48, 3, 135));
+    background: linear-gradient(0deg, rgb(7, 72, 154), rgb(48, 3, 135));
+    color: #fff;
+}
+
+svg#sun, svg#moon, svg#stars {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+}
+
+svg#sun, svg#moon {
+    width: auto;
+}
+
+svg#moon {
+    height: 60%;
+    right: 10%;
+    top: 20%;
+}
+
+svg#stars path.star {
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    -webkit-animation: fade 1s linear infinite;
+    -moz-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+}
+
+@-webkit-keyframes fade { 0%, 100% { opacity: 0 } 50% { opacity: 1 } }
+@-moz-keyframes fade { 0%, 100% { opacity: 0 } 50% { opacity: 1 } }
+@keyframes fade { 0%, 100% { opacity: 0 } 50% { opacity: 1 } }
+
+svg#sun {
+    right: -10%;
+    height: 130%;
+    -webkit-animation: spin 15s linear infinite;
+    -moz-animation: spin 15s linear infinite;
+    animation: spin 15s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+svg path.sun, svg path.moon, svg path.star {
+    fill: $yellow;
+}
+
+.container .row.home-row .home-action {
+    text-align: center;
+    background-color: $yellow;
+    color: $dark;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 1rem 0 1rem 0;
+}
+
+.container .row.home-row .home-action h2, .container .row.home-row .home-action p {
+    position: relative;
+}
+
+.container .row.home-row .home-action:hover > * {
+    animation: drift-up 0.5s ease;
+}
+
+@-webkit-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@-moz-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+
+.container .row.home-row .home-action::before {
+    font-family: FontAwesome;
+    font-size: 7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5rem 0 0 -3.5rem;
+    color: #000;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.container .row.home-row .home-action.explore-lists::before {
+    content: "\f0ca";
+}
+
+.container .row.home-row .home-action.new-lists::before {
+    content: "\f067";
+}
+
+.container .row.home-row .home-action.my-lists::before {
+    content: "\f022";
+}
+
+.container .row.home-row .home-action:hover, .container .row.home-row .home-action:active {
+    background-color: $yellow-dark;
+}
+
+// FOOTER
+
 div.container-flex.footer {
     color: #fff;
     background-color: $dark;
@@ -170,4 +322,22 @@ div.container-flex.footer a {
 
 div.container-flex.footer a:hover, div.container-flex.footer a:active {
     color: $yellow;
+}
+
+@media (max-width: 991px) {
+
+    .container .row.home-row {
+        margin: 0 4rem;
+    }
+
+    .container .row.home-row .home-action {
+        margin: 1rem 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .container .row.home-row {
+        display: flex;
+        justify-content: space-between;
+    }
 }

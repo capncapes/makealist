@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="moon" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 26.458333 26.458334">
+  <defs id="defs2" />
+  <metadata id="metadata5">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path class="moon" d="M 17.750207,0.79421558 C 15.695172,0.05055099 13.48791,-0.17241021 11.325667,0.14525659 16.093349,3.1225853 18.129314,9.0286759 16.209089,14.31148 14.278294,19.597021 8.91072,22.809121 3.3402269,22.01255 4.7972535,23.653098 6.6394522,24.905481 8.7009241,25.656916 15.566569,28.155809 23.158027,24.615854 25.656915,17.750208 28.155809,10.884562 24.615853,3.2931049 17.750207,0.79421558 Z" />
+</svg>
