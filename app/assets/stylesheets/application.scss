@@ -242,8 +242,8 @@ svg#sun {
     animation: spin 15s linear infinite;
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
 svg path.sun, svg path.moon, svg path.star {
@@ -263,13 +263,13 @@ svg path.sun, svg path.moon, svg path.star {
     position: relative;
 }
 
-.container .row.home-row .home-action:hover > * {
-    animation: drift-up 0.5s ease;
-}
+@-webkit-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } }
+@-moz-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } }
+@keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } }
 
-@-webkit-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
-@-moz-keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
-@keyframes drift-up { 0% { -webkit-transform: translateY(0); transform: translateY(0); } 50% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@-webkit-keyframes drift-down { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@-moz-keyframes drift-down { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@keyframes drift-down { 0% { -webkit-transform: translateY(-8px); transform: translateY(-8px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
 
 .container .row.home-row .home-action::before {
     font-family: FontAwesome;
@@ -293,6 +293,10 @@ svg path.sun, svg path.moon, svg path.star {
 
 .container .row.home-row .home-action.my-lists::before {
     content: "\f022";
+}
+
+.container .row.home-row .home-action.home-sign-up-btn::before {
+    content: "\f234";
 }
 
 .container .row.home-row .home-action:hover, .container .row.home-row .home-action:active {

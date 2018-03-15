@@ -22,12 +22,9 @@
 	        <p>We made a list of <em>your</em> lists!</p>
     	<% end %>
     <% else %>
-        <%= content_tag :a, :href => new_user_registration_path, :class => 'col-md-3 home-action home-sign-up-btn' do %>
+        <%= content_tag :a, :href => new_user_registration_path, :class => 'col-xs-12 col-md-3 home-action home-sign-up-btn' do %>
 	        <h2>Sign Up</h2>
-	        <p>
-	        	Sign up for MAKEALIST, or 
-	        	<%= link_to "sign into your account", new_user_session_path %>
-	        </p>
+	        <p>Sign up for MAKEALIST!</p>
     	<% end %>
     <% end %>
 </div>

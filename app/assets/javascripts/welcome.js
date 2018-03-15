@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).on('turbolinks:load', function() {
+	// Copyright year updates automatically
 	var copyright = document.getElementById("copyright-years");
 	var year = new Date().getFullYear();
 	
@@ -11,8 +12,8 @@ $(document).on('turbolinks:load', function() {
 		copyright.innerHTML = year;
 	}
 
-	var today = new Date();
-	var hourNow = today.getHours();
+	// Homepage greeting updates according to time of day
+	var hourNow = new Date().getHours();
 
 	var sun = document.getElementById("sun");
 	var moon = document.getElementById("moon");
@@ -37,4 +38,11 @@ $(document).on('turbolinks:load', function() {
 	}
 
 	document.getElementById("greeting").innerHTML = greeting;
+
+	// Homepage buttons animate on hover
+	$(".home-action").hover(function() {
+		$(this).children().css("animation", "drift-up 0.5s ease forwards");
+		}, function() {
+		$(this).children().css("animation", "drift-down 0.5s ease");
+	});
 });
