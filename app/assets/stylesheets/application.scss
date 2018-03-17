@@ -24,9 +24,11 @@ a:hover, a:active {
 
 // NAVIGATION
 
-.navbar {
-    background-color: $orange;
+body div.window-container div.container-flex nav.navbar.navbar-default {
+    background-color: $dark;
+    border: none;
     border-radius: 0;
+    margin-bottom: 0;
 }
 
 div.container {
@@ -38,8 +40,8 @@ div.container {
 }
 
 .navbar-default .navbar-nav > li, .navbar-header {
-    border-top: 5px solid $orange;
-    border-bottom: 5px solid $orange;
+    border-top: 5px solid $dark;
+    border-bottom: 5px solid $dark;
 }
 
 .navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:active {
@@ -67,6 +69,23 @@ body .window-container .container-flex .navbar.navbar-default .container .navbar
 div.container.body {
     min-height: calc(100vh - 60px);
     padding-bottom: 60px;
+    margin-top: 20px;
+}
+
+.container-flex.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    background: url('hero-img.jpeg') no-repeat center top;
+    margin-top: -20px;
+}
+
+.container-flex.hero-img h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
 }
 
 .col-md-8 img {

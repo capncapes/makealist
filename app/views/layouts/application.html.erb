@@ -36,6 +36,13 @@
           </div>
         </div>
       </nav>
+      <% unless current_page?('/users/sign_up') || current_page?('/users/sign_in') %>
+        <% if current_page?(controller: 'welcome', action: 'index') %>
+          <div class="container-flex hero-img">
+            <h1 class="display-1">Create your own advanced lists!</h1>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="container body">
       <%= yield %>
