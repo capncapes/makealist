@@ -88,12 +88,14 @@ div.container.body {
     text-transform: uppercase;
 }
 
-.col-md-8 img {
-    margin-top: 20px;
+.col-md-8 img, .col-md-3 img {
     max-width: 100%;
     max-height: 100%;
-    border: 5px solid $yellow;
     border-radius: 10px;
+}
+
+.col-md-8 img {
+    margin-top: 20px;
 }
 
 // FORMS
