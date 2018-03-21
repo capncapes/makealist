@@ -2,23 +2,41 @@
 <%= form_for [list, product] do |f| %>
     <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control', placeholder: "Product Name", required: true %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Product name", required: true %>
     </div>
     <div class="form-group">
         <%= f.label :description %>
-        <%= f.text_area :description, rows: 3, class: 'form-control', placeholder: "Enter a description for the product..." %>
+        <%= f.text_area :description, rows: 2, class: 'form-control', placeholder: "Write a description for the product..." %>
     </div>
-    <div class="form-group">
-        <%= f.label "Store Name" %>
-        <%= f.text_field :store1_name, class: 'form-control', placeholder: "e.g. Walmart, Target, GlacierTees.com" %>
-    </div>
-    <div class="form-group">
-        <%= f.label "Price" %>
-        <%= f.number_field :store1_price, in: 0..100000, step: 0.01, class: 'form-control', placeholder: "Enter the price" %>
-    </div>
-    <div class="form-group">
-        <%= f.label "URL" %>
-        <%= f.url_field :store1_link, class: 'form-control', placeholder: "Include 'http://' or 'https://'" %>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <%= f.label "Store 1 Name" %>
+                <%= f.text_field :store1_name, class: 'form-control', placeholder: "e.g. Target, GlacierTees.com" %>
+            </div>
+            <div class="form-group">
+                <%= f.label "Price" %>
+                <%= f.number_field :store1_price, in: 0..100000, step: 0.01, class: 'form-control', placeholder: "Enter the price" %>
+            </div>
+            <div class="form-group">
+                <%= f.label "URL" %>
+                <%= f.url_field :store1_link, class: 'form-control', placeholder: "Include 'http://' or 'https://'" %>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <%= f.label "Store 2 Name" %>
+                <%= f.text_field :store2_name, class: 'form-control', placeholder: "e.g. Target, GlacierTees.com" %>
+            </div>
+            <div class="form-group">
+                <%= f.label "Price" %>
+                <%= f.number_field :store2_price, in: 0..100000, step: 0.01, class: 'form-control', placeholder: "Enter the price" %>
+            </div>
+            <div class="form-group">
+                <%= f.label "URL" %>
+                <%= f.url_field :store2_link, class: 'form-control', placeholder: "Include 'http://' or 'https://'" %>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <%= button_tag type: 'submit', class: 'btn btn-orange' do %>

@@ -5,8 +5,27 @@
     <div class="col-md-9">
         <div class="card mb-3">
             <div class="card-body">
-                <h4 class="card-title"><%= @product.store1_price %></h4>
-                <p class="card-text"><%= @product.description %></p>
+                <p class="lead card-text"><%= @product.description %></p>
+                <div class="card-title">
+                    <% if @product.store1_name && @product.store1_price && @product.store1_link %>
+                        Get it at <%= @product.store1_name %> for <%= number_to_currency(@product.store1_price, precision: 2) %>
+                        <%= link_to '<i class="fa fa-external-link-square fa-fw" aria-hidden="false"></i>'.html_safe, @product.store1_link, target: '_blank' %>
+                    <% elsif @product.store1_name && @product.store1_price %>
+                        <%= @product.store1_name %> has it for <%= number_to_currency(@product.store1_price, precision: 2) %>
+                    <% elsif @product.store1_name %>
+                        Find it at <%= @product.store1_name %>
+                    <% end %>
+                </div>
+                <div class="card-title">
+                    <% if @product.store2_name && @product.store2_price && @product.store2_link %>
+                        Get it at <%= @product.store2_name %> for <%= number_to_currency(@product.store2_price, precision: 2) %>
+                        <%= link_to '<i class="fa fa-external-link-square fa-fw" aria-hidden="false"></i>'.html_safe, @product.store2_link, target: '_blank' %>
+                    <% elsif @product.store2_name && @product.store2_price %>
+                        <%= @product.store2_name %> has it for <%= number_to_currency(@product.store2_price, precision: 2) %>
+                    <% elsif @product.store2_name %>
+                        Find it at <%= @product.store2_name %>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
